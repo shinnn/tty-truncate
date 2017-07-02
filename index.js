@@ -1,5 +1,7 @@
 'use strict';
 
+var inspect = require('util').inspect;
+
 var ansiRegex = require('ansi-regex');
 var sliceAnsi = require('slice-ansi');
 var stringWidth = require('string-width');
@@ -15,6 +17,14 @@ module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(s
       cols +
       '), but got ' +
       str +
+      '.'
+    );
+  }
+
+  if (str.indexOf('\n') !== -1) {
+    throw new Error(
+      'tty-truncate doesn\'t support string with newline, but got ' +
+      inspect(str) +
       '.'
     );
   }

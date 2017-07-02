@@ -34,12 +34,12 @@ const ttyTruncate = require('tty-truncate');
 
 ### ttyTruncate(*input*)
 
-*input*: `string`  
+*input*: `string` (single-line string)  
 Return: `string`
 
-It replaces overflowing text with `…`.
+It replaces overflowing text with a single `…`.
 
-Note that this module works only when `process.stdout.isTTY` is `true`. When the Node.js program is running on a non-TTY environment, it throws an error.
+Note that this module works only when `process.stdout.isTTY` is `true`. In a non-TTY environment it always throws an error.
 
 ```javascript
 const ttyTruncate = require('tty-truncate');

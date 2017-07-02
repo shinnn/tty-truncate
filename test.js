@@ -19,9 +19,15 @@ test('ttyTruncate()', t => {
   );
 
   t.equal(
-    ttyTruncate('1'),
-    '1',
+    ttyTruncate(''),
+    '',
     'should not truncate a string when it is short enough.'
+  );
+
+  t.throws(
+    () => ttyTruncate('a\n\rb'),
+    /^Error.*tty-truncate doesn't support string with newline, but got 'a\\n\\rb'\./,
+    'should throw an error when it takes a multiline string.'
   );
 
   t.throws(
