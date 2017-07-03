@@ -1,6 +1,6 @@
 {
   "name": "tty-truncate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Truncate a string to the current text terminal width",
   "repository": "shinnn/tty-truncate",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
