@@ -1,35 +1,27 @@
 'use strict';
 
-var inspect = require('util').inspect;
+const inspect = require('util').inspect;
 
-var ansiRegex = require('ansi-regex');
-var sliceAnsi = require('slice-ansi');
-var stringWidth = require('string-width');
+const ansiRegex = require('ansi-regex');
+const sliceAnsi = require('slice-ansi');
+const stringWidth = require('string-width');
 
-var endRegex = new RegExp('(?=(' + ansiRegex().source + ')*$)');
+const endRegex = new RegExp(`(?=(${ansiRegex().source})*$)`);
 
 module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(str) {
-  var cols = process.stdout.columns;
+  const cols = process.stdout.columns;
 
   if (typeof str !== 'string') {
-    throw new TypeError(
-      'Expected a string to truncate to the current text terminal width (' +
-      cols +
-      '), but got ' +
-      str +
-      '.'
-    );
+    throw new TypeError(`Expected a string to truncate to the current text terminal width (${cols}), but got ${
+      inspect(str)
+    }.`);
   }
 
   if (str.indexOf('\n') !== -1) {
-    throw new Error(
-      'tty-truncate doesn\'t support string with newline, but got ' +
-      inspect(str) +
-      '.'
-    );
+    throw new Error(`tty-truncate doesn't support string with newline, but got ${inspect(str)}.`);
   }
 
-  var len = stringWidth(str);
+  const len = stringWidth(str);
 
   if (len <= cols) {
     return str;

@@ -6,7 +6,7 @@
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
   "scripts": {
     "bench": "node benchmark.js",
-    "pretest": "eslint --format=codeframe benchmark.js index.js test.js",
+    "pretest": "eslint --fix --format=codeframe benchmark.js index.js test.js",
     "test": "nyc --reporter=html --reporter=text node test.js"
   },
   "license": "CC0-1.0",
@@ -27,9 +27,9 @@
     "tty"
   ],
   "dependencies": {
-    "ansi-regex": "^2.1.1",
+    "ansi-regex": "^3.0.0",
     "slice-ansi": "^0.1.0",
-    "string-width": "^1.0.2"
+    "string-width": "^2.1.0"
   },
   "devDependencies": {
     "@shinnn/eslint-config-node": "^4.0.0",
@@ -40,9 +40,6 @@
     "tape": "^4.7.0"
   },
   "eslintConfig": {
-    "extends": "@shinnn/node",
-    "rules": {
-      "no-var": "off"
-    }
+    "extends": "@shinnn/node"
   }
 }
