@@ -32,7 +32,7 @@ test('ttyTruncate()', t => {
 
   t.throws(
     () => ttyTruncate(Infinity),
-    /^TypeError.*Expected a string to truncate to the current text terminal width \(\d+\), but got Infinity\./,
+    /^TypeError.*Expected a string to truncate to the current text terminal width \(\d+\), but got Infinity \(number\)\./,
     'should throw an error when it takes a non-string argument.'
   );
 

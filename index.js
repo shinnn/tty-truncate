@@ -3,6 +3,7 @@
 const inspect = require('util').inspect;
 
 const ansiRegex = require('ansi-regex');
+const inspectWithKind = require('inspect-with-kind');
 const sliceAnsi = require('slice-ansi');
 const stringWidth = require('string-width');
 
@@ -13,7 +14,7 @@ module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(s
 
   if (typeof str !== 'string') {
     throw new TypeError(`Expected a string to truncate to the current text terminal width (${cols}), but got ${
-      inspect(str)
+      inspectWithKind(str)
     }.`);
   }
 

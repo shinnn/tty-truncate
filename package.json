@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "ansi-regex": "^3.0.0",
+    "inspect-with-kind": "^1.0.2",
     "slice-ansi": "^0.1.0",
     "string-width": "^2.1.0"
   },
