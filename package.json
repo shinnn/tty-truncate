@@ -28,17 +28,17 @@
   ],
   "dependencies": {
     "ansi-regex": "^3.0.0",
-    "inspect-with-kind": "^1.0.2",
-    "slice-ansi": "^0.1.0",
-    "string-width": "^2.1.0"
+    "inspect-with-kind": "^1.0.3",
+    "slice-ansi": "^1.0.0",
+    "string-width": "^2.1.1"
   },
   "devDependencies": {
-    "@shinnn/eslint-config-node": "^4.0.0",
-    "cli-truncate": "^1.0.0",
-    "eslint": "^4.1.1",
-    "execa": "^0.7.0",
-    "nyc": "^11.0.3",
-    "tape": "^4.7.0"
+    "@shinnn/eslint-config-node": "^5.0.0",
+    "cli-truncate": "^1.1.0",
+    "eslint": "^4.13.0",
+    "execa": "^0.8.0",
+    "nyc": "^11.4.0",
+    "tape": "^4.8.0"
   },
   "eslintConfig": {
     "extends": "@shinnn/node"
