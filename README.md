@@ -1,6 +1,6 @@
 # tty-truncate
 
-[![NPM version](https://img.shields.io/npm/v/tty-truncate.svg)](https://www.npmjs.com/package/tty-truncate)
+[![npm version](https://img.shields.io/npm/v/tty-truncate.svg)](https://www.npmjs.com/package/tty-truncate)
 [![Build Status](https://travis-ci.org/shinnn/tty-truncate.svg?branch=master)](https://travis-ci.org/shinnn/tty-truncate)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/tty-truncate.svg)](https://coveralls.io/github/shinnn/tty-truncate?branch=master)
 
@@ -20,7 +20,7 @@ ttyTruncate(str); //=> '4724e053261747b2780…'
 
 ## Installation
 
-[Use npm.](https://docs.npmjs.com/cli/install)
+[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/getting-started/what-is-npm).
 
 ```
 npm install tty-truncate
@@ -65,4 +65,4 @@ $ node example.js | echo -n
 
 ## License
 
-[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)
+[ISC License](./LICENSE) © 2018 Shinnosuke Watanabe
