@@ -1,6 +1,6 @@
 {
   "name": "tty-truncate",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Truncate a string to the current text terminal width",
   "repository": "shinnn/tty-truncate",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
@@ -28,17 +28,17 @@
   ],
   "dependencies": {
     "ansi-regex": "^3.0.0",
-    "inspect-with-kind": "^1.0.3",
+    "inspect-with-kind": "^1.0.4",
     "slice-ansi": "^1.0.0",
     "string-width": "^2.1.1"
   },
   "devDependencies": {
     "@shinnn/eslint-config-node": "^5.0.0",
     "cli-truncate": "^1.1.0",
-    "eslint": "^4.13.0",
-    "execa": "^0.8.0",
-    "nyc": "^11.4.0",
-    "tape": "^4.8.0"
+    "eslint": "^4.19.1",
+    "execa": "^0.10.0",
+    "nyc": "^11.6.0",
+    "tape": "^4.9.0"
   },
   "eslintConfig": {
     "extends": "@shinnn/node"
