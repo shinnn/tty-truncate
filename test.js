@@ -32,14 +32,20 @@ test('ttyTruncate()', t => {
 
 	t.throws(
 		() => ttyTruncate(Infinity),
-		/^TypeError.*Expected a string to truncate to the current text terminal width \(\d+\), but got Infinity \(number\)\./,
+		/^TypeError.*Expected a string to truncate to the current text terminal width, but got Infinity \(number\)\./,
 		'should throw an error when it takes a non-string argument.'
 	);
 
 	t.throws(
 		() => ttyTruncate(),
-		/^TypeError.*Expected a string to truncate to the current text terminal width \(\d+\), but got undefined\./,
+		/^RangeError.*Expected 1 argument \(<string>\), but got no arguments\./,
 		'should throw an error when it takes no arguments.'
+	);
+
+	t.throws(
+		() => ttyTruncate('1', '2'),
+		/^RangeError.*Expected 1 argument \(<string>\), but got 2 arguments\./,
+		'should throw an error when it takes too many arguments.'
 	);
 
 	t.end();
