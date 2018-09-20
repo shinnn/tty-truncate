@@ -1,46 +1,49 @@
 {
-  "name": "tty-truncate",
-  "version": "1.0.0",
-  "description": "Truncate a string to the current text terminal width",
-  "repository": "shinnn/tty-truncate",
-  "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
-  "scripts": {
-    "bench": "node benchmark.js",
-    "pretest": "eslint --fix --format=codeframe benchmark.js index.js test.js",
-    "test": "nyc --reporter=html --reporter=text node test.js"
-  },
-  "license": "ISC",
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "tty",
-    "truncate",
-    "length",
-    "width",
-    "adjust",
-    "string",
-    "text",
-    "line",
-    "terminal",
-    "console",
-    "tty"
-  ],
-  "dependencies": {
-    "ansi-regex": "^3.0.0",
-    "inspect-with-kind": "^1.0.4",
-    "slice-ansi": "^1.0.0",
-    "string-width": "^2.1.1"
-  },
-  "devDependencies": {
-    "@shinnn/eslint-config-node": "^5.0.0",
-    "cli-truncate": "^1.1.0",
-    "eslint": "^4.19.1",
-    "execa": "^0.10.0",
-    "nyc": "^11.6.0",
-    "tape": "^4.9.0"
-  },
-  "eslintConfig": {
-    "extends": "@shinnn/node"
-  }
+	"name": "tty-truncate",
+	"version": "1.0.0",
+	"description": "Truncate a string to the current text terminal width",
+	"repository": "shinnn/tty-truncate",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"license": "ISC",
+	"scripts": {
+		"bench": "node benchmark.js",
+		"pretest": "eslint .",
+		"test": "nyc node test.js"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"tty",
+		"truncate",
+		"length",
+		"width",
+		"adjust",
+		"string",
+		"text",
+		"line",
+		"terminal",
+		"console",
+		"tty"
+	],
+	"dependencies": {
+		"ansi-regex": "^4.0.0",
+		"inspect-with-kind": "^1.0.5",
+		"slice-ansi": "^1.0.0",
+		"string-width": "^2.1.1"
+	},
+	"devDependencies": {
+		"@shinnn/eslint-config": "^6.7.1",
+		"cli-truncate": "^1.1.0",
+		"eslint": "^5.6.0",
+		"nyc": "^13.0.1",
+		"nyc-config-common": "^1.0.0",
+		"tape": "^4.9.1"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn"
+	},
+	"nyc": {
+		"extends": "nyc-config-common"
+	}
 }

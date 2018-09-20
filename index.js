@@ -7,7 +7,7 @@ const inspectWithKind = require('inspect-with-kind');
 const sliceAnsi = require('slice-ansi');
 const stringWidth = require('string-width');
 
-const endRegex = new RegExp(`(?=(${ansiRegex().source})*$)`);
+const endRegex = new RegExp(`(?=(?:${ansiRegex().source})*$)`, 'u');
 
 module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(...args) {
 	const argLen = args.length;
@@ -30,9 +30,7 @@ module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(.
 
 	const {columns} = process.stdout;
 
-	const len = stringWidth(str);
-
-	if (len <= columns) {
+	if (stringWidth(str) <= columns) {
 		return str;
 	}
 
