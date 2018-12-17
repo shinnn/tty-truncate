@@ -30,12 +30,12 @@
 		"ansi-regex": "^4.0.0",
 		"inspect-with-kind": "^1.0.5",
 		"slice-ansi": "^2.0.0",
-		"string-width": "^2.1.1"
+		"string-width": "^3.0.0"
 	},
 	"devDependencies": {
-		"@shinnn/eslint-config": "^6.8.0",
+		"@shinnn/eslint-config": "^6.8.7",
 		"cli-truncate": "^1.1.0",
-		"eslint": "^5.8.0",
+		"eslint": "^5.10.0",
 		"nyc": "^13.1.0",
 		"nyc-config-common": "^1.0.1",
 		"tape": "^4.9.1"
