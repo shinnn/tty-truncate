@@ -27,18 +27,18 @@
 		"tty"
 	],
 	"dependencies": {
-		"ansi-regex": "^4.0.0",
+		"ansi-regex": "^4.1.0",
 		"inspect-with-kind": "^1.0.5",
-		"slice-ansi": "^2.0.0",
-		"string-width": "^3.0.0"
+		"slice-ansi": "^2.1.0",
+		"string-width": "^4.0.0"
 	},
 	"devDependencies": {
-		"@shinnn/eslint-config": "^6.8.7",
+		"@shinnn/eslint-config": "^6.9.1",
 		"cli-truncate": "^1.1.0",
-		"eslint": "^5.10.0",
-		"nyc": "^13.1.0",
+		"eslint": "^5.15.3",
+		"nyc": "^13.3.0",
 		"nyc-config-common": "^1.0.1",
-		"tape": "^4.9.1"
+		"tape": "^4.10.1"
 	},
 	"eslintConfig": {
 		"extends": "@shinnn"
