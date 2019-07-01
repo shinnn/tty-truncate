@@ -1,7 +1,7 @@
 # tty-truncate
 
 [![npm version](https://img.shields.io/npm/v/tty-truncate.svg)](https://www.npmjs.com/package/tty-truncate)
-[![Build Status](https://travis-ci.org/shinnn/tty-truncate.svg?branch=master)](https://travis-ci.org/shinnn/tty-truncate)
+[![GitHub Actions](https://action-badges.now.sh/shinnn/tty-truncate)](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/shinnn/tty-truncate)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/tty-truncate.svg)](https://coveralls.io/github/shinnn/tty-truncate?branch=master)
 
 Truncate a string to the current text terminal width
@@ -65,4 +65,4 @@ $ node example.js | echo -n
 
 ## License
 
-[ISC License](./LICENSE) © 2018 Shinnosuke Watanabe
+[ISC License](./LICENSE) © 2018 - 2019 Watanabe Shinnosuke
