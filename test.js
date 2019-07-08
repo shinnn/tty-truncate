@@ -3,12 +3,15 @@
 const {execFile} = require('child_process');
 const {promisify} = require('util');
 
+process.stdout.isTTY = !process.env.TTY_TRUCATE_TEST_RESPAWNED;
+process.stdout.columns = process.stdout.columns || 10;
+
 const stringWidth = require('string-width');
 const ttyTruncate = require('.');
 const test = require('tape');
 
 test('ttyTruncate()', t => {
-	const columns = process.stdout.columns;
+	const {columns} = process.stdout;
 	const fixture = 'aBc';
 	const fixtureWidth = stringWidth(fixture);
 
@@ -55,7 +58,12 @@ test('ttyTruncate()', t => {
 
 test('ttyTruncate() on a non-TTY environment', async t => {
 	try {
-		await promisify(execFile)('node', [__filename], {shell: process.platform === 'win32'});
+		await promisify(execFile)(process.execPath, [__filename], {
+			env: {
+				...process.env,
+				TTY_TRUCATE_TEST_RESPAWNED: '1'
+			}
+		});
 		t.fail('Unexpectedly succeeded.');
 	} catch ({message}) {
 		t.ok(
@@ -63,6 +71,18 @@ test('ttyTruncate() on a non-TTY environment', async t => {
 			'should throw an error.'
 		);
 	}
+
+	t.end();
+});
+
+test('ttyTruncate() on a zero-width terminal', async t => {
+	process.stdout.columns = 0;
+
+	t.equal(
+		ttyTruncate('a'),
+		'',
+		'should always return an empty string.'
+	);
 
 	t.end();
 });

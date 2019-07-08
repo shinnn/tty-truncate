@@ -30,6 +30,10 @@ module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(.
 
 	const {columns} = process.stdout;
 
+	if (columns === 0) {
+		return '';
+	}
+
 	if (stringWidth(str) <= columns) {
 		return str;
 	}
