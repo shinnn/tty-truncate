@@ -16,8 +16,13 @@
 	"keywords": [
 		"tty",
 		"truncate",
+		"slice",
 		"length",
 		"width",
+		"halfwidth",
+		"fullwidth",
+		"unicode",
+		"ansi",
 		"adjust",
 		"string",
 		"text",
