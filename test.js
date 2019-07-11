@@ -75,7 +75,25 @@ test('ttyTruncate() on a non-TTY environment', async t => {
 	t.end();
 });
 
-test('ttyTruncate() on a zero-width terminal', async t => {
+test('ttyTruncate() on a single-column terminal', t => {
+	process.stdout.columns = 1;
+
+	t.equal(
+		ttyTruncate('aa'),
+		'a',
+		'should return a character when the string starts with a halfwidth character.'
+	);
+
+	t.equal(
+		ttyTruncate('卍'),
+		'…',
+		'should return \'…\' when the string starts with a fullwidth character.'
+	);
+
+	t.end();
+});
+
+test('ttyTruncate() on a zero-column terminal', t => {
 	process.stdout.columns = 0;
 
 	t.equal(

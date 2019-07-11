@@ -38,6 +38,10 @@ module.exports = process.stdout && process.stdout.isTTY ? function ttyTruncate(.
 		return str;
 	}
 
+	if (columns === 1) {
+		return sliceAnsi(str, 0, 1) || '…';
+	}
+
 	return sliceAnsi(str, 0, columns - 1).replace(endRegex, '…');
 } : function unsupported() {
 	throw new Error('tty-truncate doesn\'t support non-TTY environments.');
